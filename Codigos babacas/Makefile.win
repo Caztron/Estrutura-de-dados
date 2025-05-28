@@ -1,0 +1,58 @@
+# Project: Estrutura
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Fatorial.o for.o "impar\ e\ par.o" main.o nota.o parcelas.o "projeto\ semestre.o" temperatura.o Untitled2.o volume.o "Vetores\ e\ matrizes.o"
+LINKOBJ  = Fatorial.o for.o "impar e par.o" main.o nota.o parcelas.o "projeto semestre.o" temperatura.o Untitled2.o volume.o "Vetores e matrizes.o"
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Estrutura.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Fatorial.o: Fatorial.c
+	$(CC) -c Fatorial.c -o Fatorial.o $(CFLAGS)
+
+for.o: for.c
+	$(CC) -c for.c -o for.o $(CFLAGS)
+
+"impar\ e\ par.o": impar\ e\ par.cpp
+	$(CC) -c "impar e par.cpp" -o "impar e par.o" $(CFLAGS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+nota.o: nota.cpp
+	$(CC) -c nota.cpp -o nota.o $(CFLAGS)
+
+parcelas.o: parcelas.cpp
+	$(CC) -c parcelas.cpp -o parcelas.o $(CFLAGS)
+
+"projeto\ semestre.o": projeto\ semestre.cpp
+	$(CC) -c "projeto semestre.cpp" -o "projeto semestre.o" $(CFLAGS)
+
+temperatura.o: temperatura.cpp
+	$(CC) -c temperatura.cpp -o temperatura.o $(CFLAGS)
+
+Untitled2.o: Untitled2.c
+	$(CC) -c Untitled2.c -o Untitled2.o $(CFLAGS)
+
+volume.o: volume.cpp
+	$(CC) -c volume.cpp -o volume.o $(CFLAGS)
+
+"Vetores\ e\ matrizes.o": Vetores\ e\ matrizes.c
+	$(CC) -c "Vetores e matrizes.c" -o "Vetores e matrizes.o" $(CFLAGS)
